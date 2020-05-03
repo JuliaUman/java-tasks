@@ -1,0 +1,41 @@
+import java.util.Arrays;
+import java.util.StringJoiner;
+
+public class TicTacToeBoard {
+   char [][] board = {{' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '}};
+   public void fillX(int a, int b) {
+      fillChar(a,b, 'X');
+   }
+   public void fillO(int a, int b)    {
+      fillChar(a,b, 'O');
+
+   }
+   private void fillChar(int a, int b, char c) {
+      if(board[a][b]!=' ') {
+         throw new IllegalStateException("Try again looser");
+      }
+      board[a][b] = c;
+   }
+   public void print() {
+      System.out.println(toString());
+   }
+
+   @Override
+   public String toString() {
+      String result = rowToString(board[0]) + "\n";
+      for(int i = 1; i < board.length; i++) {
+         result += "-----\n";
+         result += rowToString(board[i]) + "\n";
+      }
+      return result;
+   }
+
+   private String rowToString(char[] row) {
+      String result = "";
+      result += row[0];
+      for(int i = 1; i < row.length; i++) {
+         result += "|" + row[i];
+      }
+      return result;
+   }
+}
