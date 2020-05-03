@@ -1,0 +1,28 @@
+public class ArraySize {
+
+    public static long min(long[] array) {
+        long minValue = array[0];
+        for (int i = 1; i < array.length; i++) {
+
+            if (array[i] < minValue) {
+                minValue = array[i];
+                //System.out.println(array[i]);
+            }
+        }
+        return minValue;
+    }
+
+
+
+
+    public static void main(String[] args) {
+        long[] array = { 0, 0, 1, 7, 35, 155, 651, 2667, 10795, 43435,
+                174251, 698027, 2794155, 11180715, 44731051, 178940587,
+                715795115L, 2863245995L, 11453115051L, 45812722347L, 183251413675L,
+                733006703275L, 2932028910251L, 11728119835307L, 46912487729835L,
+                187649967696555L, 750599904340651L, 3002399684471467L};
+        long val = min(array);
+        System.out.println(val);
+
+    }
+}
